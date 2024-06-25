@@ -1,0 +1,4 @@
+MEOW=audio/catmeow.wav,0.5,2,6.0,24.0
+FOOTSTEPS_1=audio/footsteps_1.wav,0.5,2,6.0,24.0
+FOOTSTEPS_2=audio/footsteps_2.wav,0.5,2,6.0,24.0
+FOOTSTEPS_3=audio/footsteps_3.wav,0.5,2,6.0,24.0
