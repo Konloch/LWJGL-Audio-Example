@@ -19,5 +19,10 @@
 + For grouped sounds, make them start with the same name, then append _numerical-index to the end, so *WALK_1, WALK_2*
 + The SoundBank is separated into **Name, Path, Volume, Roll-Off, Reference-Distance, Max-Distance**
 
+### Quick Source Links
++ [LWJGL Audio Example](https://github.com/Konloch/LWJGL-Audio-Example/blob/master/src/main/java/com/konloch/LWJGLAudioExample.java)
++ [Sound Bank](https://github.com/Konloch/LWJGL-Audio-Example/blob/master/src/main/resources/SoundBank.txt)
++ [Sound Files](https://github.com/Konloch/LWJGL-Audio-Example/tree/master/src/main/resources/audio)
+
 ## Sample Audio Credits
 + https://freesound.org/people/Yoyodaman234/
