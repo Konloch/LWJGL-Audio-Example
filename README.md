@@ -24,5 +24,8 @@
 + [Sound Bank](https://github.com/Konloch/LWJGL-Audio-Example/blob/master/src/main/resources/SoundBank.txt)
 + [Sound Files](https://github.com/Konloch/LWJGL-Audio-Example/tree/master/src/main/resources/audio)
 
+### Requirements:
++ Java 1.8 - any Java version after that works fine as well
+
 ## Sample Audio Credits
 + https://freesound.org/people/Yoyodaman234/
