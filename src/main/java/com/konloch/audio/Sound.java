@@ -24,7 +24,7 @@ public class Sound
 	private final String resourcePath;
 	
 	//openAL sound index
-	private int soundIndex;
+	private int sourceIndex;
 	
 	//runtime sound changes
 	private float volume;
@@ -62,10 +62,10 @@ public class Sound
 			//clear local buffer
 			((Buffer) dataBuffer).clear();
 			
-			soundIndex = alGenSources();
-			alSourcei(soundIndex, AL_BUFFER, bufferIndex);
+			sourceIndex = alGenSources();
+			alSourcei(sourceIndex, AL_BUFFER, bufferIndex);
 			
-			System.out.println("Inserting["+soundIndex+"]: " + resourcePath);
+			System.out.println("Inserting["+ sourceIndex +"]: " + resourcePath);
 		}
 		catch (UnsupportedAudioFileException | IOException e)
 		{
@@ -74,12 +74,12 @@ public class Sound
 		
 		int error = alGetError();
 		if (error != AL_NO_ERROR)
-			System.out.println("OPENAL ERROR: " + getALErrorString(error) + " ON ID: " + soundIndex);
+			System.out.println("OPENAL ERROR: " + getALErrorString(error) + " ON ID: " + sourceIndex);
 	}
 	
-	public int getSoundIndex()
+	public int getSourceIndex()
 	{
-		return soundIndex;
+		return sourceIndex;
 	}
 	
 	public void setVolume(float volume)
@@ -106,31 +106,31 @@ public class Sound
 	{
 		System.out.println("PLAYING: " + resourcePath + " at " + x + ", " + y + ", " + z);
 		
-		alSourcef(soundIndex, AL_ROLLOFF_FACTOR, rollOff);
-		alSourcef(soundIndex, AL_REFERENCE_DISTANCE, referenceDistance);
-		alSourcef(soundIndex, AL_MAX_DISTANCE, maxDistance);
-		alSourcef(soundIndex, AL_GAIN, volume);
-		alSourcef(soundIndex, AL_PITCH, 1f);
+		alSourcef(sourceIndex, AL_ROLLOFF_FACTOR, rollOff);
+		alSourcef(sourceIndex, AL_REFERENCE_DISTANCE, referenceDistance);
+		alSourcef(sourceIndex, AL_MAX_DISTANCE, maxDistance);
+		alSourcef(sourceIndex, AL_GAIN, volume);
+		alSourcef(sourceIndex, AL_PITCH, 1f);
 		
 		if(audio3D)
 		{
-			alSourcei(soundIndex, AL_SOURCE_RELATIVE, AL_FALSE);
-			alSource3f(soundIndex, AL_POSITION, x, y, z);
+			alSourcei(sourceIndex, AL_SOURCE_RELATIVE, AL_FALSE);
+			alSource3f(sourceIndex, AL_POSITION, x, y, z);
 		}
 		else
 		{
-			alSourcei(soundIndex, AL_SOURCE_RELATIVE, AL_TRUE);
-			alSource3f(soundIndex, AL_POSITION, 0, 0, 0);
+			alSourcei(sourceIndex, AL_SOURCE_RELATIVE, AL_TRUE);
+			alSource3f(sourceIndex, AL_POSITION, 0, 0, 0);
 		}
 		
-		alSource3f(soundIndex, AL_VELOCITY, 1f, 1f, 1f);
-		alSourcei(soundIndex, AL_LOOPING, AL_FALSE);
+		alSource3f(sourceIndex, AL_VELOCITY, 1f, 1f, 1f);
+		alSourcei(sourceIndex, AL_LOOPING, AL_FALSE);
 		
-		alSourcePlay(soundIndex);
+		alSourcePlay(sourceIndex);
 		
 		int error = alGetError();
 		if (error != AL_NO_ERROR)
-			System.out.println("OPENAL ERROR: " + getALErrorString(error) + " ON ID: " + soundIndex);
+			System.out.println("OPENAL ERROR: " + getALErrorString(error) + " ON ID: " + sourceIndex);
 	}
 	
 	public static String getALErrorString(int errorCode)
