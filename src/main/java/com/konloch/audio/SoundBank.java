@@ -93,7 +93,7 @@ public class SoundBank
 						}
 						
 						Sound sound = new Sound(path, volume, rollOff, referenceDistance, maxDistance);
-						soundIDMap.put(sound.getSoundIndex(), sound);
+						soundIDMap.put(sound.getSourceIndex(), sound);
 						sounds.add(sound);
 						soundMap.put(mapKey, sounds);
 					}
