@@ -15,5 +15,9 @@
 ## Technical Notes
 + For 3D audio to work the sounds must be in MONO format.
 
+### SoundBank Explanation
++ For grouped sounds, make them start with the same name, then append _numerical-index to the end, so *WALK_1, WALK_2*
++ The SoundBank is separated into **Name, Path, Volume, Roll-Off, Reference-Distance, Max-Distance**
+
 ## Sample Audio Credits
 + https://freesound.org/people/Yoyodaman234/
