@@ -92,6 +92,36 @@ public class Sound
 		return volume;
 	}
 	
+	public float getRollOff()
+	{
+		return rollOff;
+	}
+	
+	public void setRollOff(float rollOff)
+	{
+		this.rollOff = rollOff;
+	}
+	
+	public float getReferenceDistance()
+	{
+		return referenceDistance;
+	}
+	
+	public void setReferenceDistance(float referenceDistance)
+	{
+		this.referenceDistance = referenceDistance;
+	}
+	
+	public float getMaxDistance()
+	{
+		return maxDistance;
+	}
+	
+	public void setMaxDistance(float maxDistance)
+	{
+		this.maxDistance = maxDistance;
+	}
+	
 	public void play()
 	{
 		play(0, 0, 0, false);
